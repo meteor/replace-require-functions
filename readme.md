@@ -1,6 +1,6 @@
-# externalify [![Build Status](https://travis-ci.org/bendrucker/replace-requires.svg?branch=master)](https://travis-ci.org/meteor/externalify)
+# replace-require-function [![Build Status](https://travis-ci.org/meteor/replace-require-function.svg?branch=master)](https://travis-ci.org/meteor/replace-require-function)
 
-> Replace require statements
+> Replace the require function for certain modules
 
 
 ## Install
