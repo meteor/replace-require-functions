@@ -1,4 +1,4 @@
-# replace-requires [![Build Status](https://travis-ci.org/bendrucker/replace-requires.svg?branch=master)](https://travis-ci.org/bendrucker/replace-requires)
+# externalify [![Build Status](https://travis-ci.org/bendrucker/replace-requires.svg?branch=master)](https://travis-ci.org/meteor/externalify)
 
 > Replace require statements
 
