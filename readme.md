@@ -1,4 +1,4 @@
-# replace-require-function [![Build Status](https://travis-ci.org/meteor/replace-require-function.svg?branch=master)](https://travis-ci.org/meteor/replace-require-function)
+# replace-require-functions [![Build Status](https://travis-ci.org/meteor/replace-require-functions.svg?branch=master)](https://travis-ci.org/meteor/replace-require-functions)
 
 > Replace the require function for certain modules
 
