@@ -4,17 +4,35 @@ var detective = require('detective')
 var patch = require('patch-text')
 var hasRequire = require('has-require')
 var extend = require('xtend')
+var mapObject = require('map-obj')
 
-module.exports = function replaceRequires (code, replacements) {
-  var checker = new hasRequire.Checker(code)
-  var ids = Object.keys(replacements)
-  if (!ids.some(checker.has, checker)) return code
+// replacements in the form:
+// moduleName: "RequireFunc"
+// replaces all occurences of require("moduleName*") with
+// RequireFunc("moduleName*")
+module.exports = function externalize (code, replacements) {
   return patch(code, detective
     .find(code, {nodes: true})
     .nodes
     .filter(requireLiteral)
     .map(function (node) {
-      return extend(node, {replacement: replacements[node.arguments[0].value]})
+      var requireString = node.arguments[0].value.toString();
+      var replaceRequireFunc = null;
+      mapObject(replacements, function (moduleName, requireFunc) {
+        if (requireString === moduleName ||
+            requireString.indexOf(moduleName + "/") === 0) {
+          replaceRequireFunc = requireFunc;
+        }
+        return requireFunc;
+      });
+
+      if (replaceRequireFunc) {
+        return extend(node, {
+          replacement: replaceRequireFunc + '("' + requireString + '")'
+        });
+      }
+
+      return node;
     })
     .filter(function (node) {
       return node.replacement != null
