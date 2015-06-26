@@ -27,7 +27,3 @@ replaceRequires('require("foo/fooz")', {foo: 'bar'});
 // Also works on requires with paths; matches the first path segment
 bar("foo/fooz")
 ```
-
-## License
-
-MIT © [Ben Drucker](http://bendrucker.me)
