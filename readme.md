@@ -6,7 +6,7 @@
 ## Install
 
 ```
-$ npm install --save replace-requires
+$ npm install --save replace-require-functions
 ```
 
 
