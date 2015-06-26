@@ -1,14 +1,13 @@
 {
-  "name": "replace-requires",
+  "name": "replace-require-functions",
   "main": "index.js",
-  "version": "1.0.3",
-  "description": "Replace require statements",
+  "version": "1.0.0",
+  "description": "Replace the require function for some modules",
   "license": "MIT",
-  "repository": "bendrucker/replace-requires",
+  "repository": "meteor/replace-require-functions",
   "author": {
-    "name": "Ben Drucker",
-    "email": "bvdrucker@gmail.com",
-    "url": "bendrucker.me"
+    "name": "Sashko Stubailo",
+    "email": "sashko@stubailo.com"
   },
   "engines": {
     "node": ">=0.10.0"
