@@ -15,28 +15,18 @@ $ npm install --save replace-requires
 ```js
 var replaceRequires = require('replace-requires');
 
+// Call it on a string of JS code
 replaceRequires('require("foo")', {foo: 'bar'});
-//=> bar
+
+// Returns the file, but with the `require` function replaced
+bar("foo")
+
+// Call it again
+replaceRequires('require("foo/fooz")', {foo: 'bar'});
+
+// Also works on requires with paths; matches the first path segment
+bar("foo/fooz")
 ```
-
-## API
-
-#### `replaceRequires(code, replacements)` -> `string`
-
-##### code
-
-*Required*  
-Type: `string`
-
-The code to parse and replace.
-
-##### replacements
-
-*Required*  
-Type: `object`
-
-The replacements, where keys are module ids and the corresponding values are the replacements for their require statements.
-
 
 ## License
 
